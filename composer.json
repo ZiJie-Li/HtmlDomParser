@@ -1,0 +1,19 @@
+{
+    "name": "royalmar/simple-html-dom-parser",
+    "description": "modify SimpleHtmlDom for laravel",
+    "type": "library",
+    "authors": [
+        {
+            "name": "royalmar",
+            "email": "royal-mar@hotmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Royalmar\\HtmlDomParser\\": "src/"
+        }
+    }
+}

@@ -72,7 +72,7 @@ class HtmlDomParser
     // -----------------------------------------------------------------------------
     // get html dom from file
     // $maxlen is defined in the code as PHP_STREAM_COPY_ALL which is defined as -1.
-    public static function file_get_html($url, $use_include_path = false, $context=null, $offset = -1, $maxLen=-1, $lowercase = true, $forceTagsClosed=true, $target_charset = DEFAULT_TARGET_CHARSET, $stripRN=true, $defaultBRText=DEFAULT_BR_TEXT, $defaultSpanText=DEFAULT_SPAN_TEXT)
+    public static function fileGetHtml($url, $use_include_path = false, $context=null, $offset = -1, $maxLen=-1, $lowercase = true, $forceTagsClosed=true, $target_charset = DEFAULT_TARGET_CHARSET, $stripRN=true, $defaultBRText=DEFAULT_BR_TEXT, $defaultSpanText=DEFAULT_SPAN_TEXT)
     {
         // We DO force the tags to be terminated.
         $dom = new SimpleHtmlDom(null, $lowercase, $forceTagsClosed, $target_charset, $stripRN, $defaultBRText, $defaultSpanText);
@@ -90,7 +90,7 @@ class HtmlDomParser
     }
 
     // get html dom from string
-    public static function str_get_html($str, $lowercase=true, $forceTagsClosed=true, $target_charset = DEFAULT_TARGET_CHARSET, $stripRN=true, $defaultBRText=DEFAULT_BR_TEXT, $defaultSpanText=DEFAULT_SPAN_TEXT)
+    public static function strGetHtml($str, $lowercase=true, $forceTagsClosed=true, $target_charset = DEFAULT_TARGET_CHARSET, $stripRN=true, $defaultBRText=DEFAULT_BR_TEXT, $defaultSpanText=DEFAULT_SPAN_TEXT)
     {
         $dom = new SimpleHtmlDom(null, $lowercase, $forceTagsClosed, $target_charset, $stripRN, $defaultBRText, $defaultSpanText);
         if (empty($str) || strlen($str) > MAX_FILE_SIZE)
@@ -103,7 +103,7 @@ class HtmlDomParser
     }
 
     // dump html dom tree
-    public static function dump_html_tree($node, $show_attr=true, $deep=0)
+    public static function dumpHtmlTree($node, $show_attr=true, $deep=0)
     {
         $node->dump($node);
     }
